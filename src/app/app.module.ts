@@ -2,8 +2,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort'
+import {
+  MatPaginatorModule,
+  MatPaginatorIntl,
+} from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSelectModule } from '@angular/material/select';
@@ -17,8 +20,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 
-
-import { NgModule, LOCALE_ID} from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,12 +46,11 @@ import { OsEditComponent } from './pages/Os/os-edit/os-edit.component';
 import { OsViewComponent } from './pages/Os/os-view/os-view.component';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
-import { NgbModule, } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LicenseComponent } from './pages/License/license.component';
 import { DialogLicenseComponent } from './pages/License/dialog-view/dialog-license.component';
-import { ChangePasswordComponent } from './pages/Usuarios/change-password/change-password.component'
-registerLocaleData(ptBr)
-
+import { ChangePasswordComponent } from './pages/Usuarios/change-password/change-password.component';
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
@@ -104,9 +105,8 @@ registerLocaleData(ptBr)
     UsersService,
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     { provide: MatPaginatorIntl, useValue: getPortuguesPaginatorIntl() },
-    { provide: LOCALE_ID, useValue: 'pt'}
+    { provide: LOCALE_ID, useValue: 'pt' },
   ],
-  bootstrap: [AppComponent,],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
-
