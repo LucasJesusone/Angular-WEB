@@ -1,0 +1,190 @@
+
+
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$agsurveyors-primary: mat-palette($mat-indigo);
+$agsurveyors-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$agsurveyors-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$agsurveyors-theme: mat-light-theme((
+  color: (
+    primary: $agsurveyors-primary,
+    accent: $agsurveyors-accent,
+    warn: $agsurveyors-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($agsurveyors-theme);
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$agsurveyors-primary: mat-palette($mat-indigo);
+$agsurveyors-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$agsurveyors-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$agsurveyors-theme: mat-light-theme((
+  color: (
+    primary: $agsurveyors-primary,
+    accent: $agsurveyors-accent,
+    warn: $agsurveyors-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($agsurveyors-theme);
+
+// @nebular theming framework
+@import '~@nebular/theme/styles/theming';
+// @nebular out of the box themes
+@import '~@nebular/theme/styles/themes';
+
+
+$color-basic-100: #F7FFEA;
+
+$nb-themes: nb-register-theme((
+  layout-padding-top: 2.25rem,
+
+  menu-item-icon-margin: 0 0.5rem 0 0,
+
+  card-height-tiny: 13.5rem,
+  card-height-small: 21.1875rem,
+  card-height-medium: 28.875rem,
+  card-height-large: 36.5625rem,
+  card-height-giant: 44.25rem,
+  card-margin-bottom: 1.875rem,
+  card-header-with-select-padding-top: 0.5rem,
+  card-header-with-select-padding-bottom: 0.5rem,
+
+  select-min-width: 6rem,
+
+  slide-out-background: #f7f9fc,
+  slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
+  slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
+
+  color-basic-100: $color-basic-100,
+  color-basic-800: #2F4B26,
+  color-basic-900: #295c66,
+  color-basic-1000: #244555,
+  color-basic-1100: #2F4B26,  
+
+  color-primary-100: #f7fffa, 
+  color-primary-200: #e3ffe8,
+  color-primary-300: #bfffe1,
+  color-primary-400: #77933C,
+  color-primary-500: #77933C,
+  color-primary-600: #77933C,
+  color-primary-700: #37b853,
+  color-primary-800: #249440,
+  color-primary-900: #157a26,
+  
+), default, default);
+
+$nb-themes: nb-register-theme((
+  layout-padding-top: 2.25rem,
+
+  menu-item-icon-margin: 0 0.5rem 0 0,
+
+  card-height-tiny: 13.5rem,
+  card-height-small: 21.1875rem,
+  card-height-medium: 28.875rem,
+  card-height-large: 36.5625rem,
+  card-height-giant: 44.25rem,
+  card-margin-bottom: 1.875rem,
+  card-header-with-select-padding-top: 0.5rem,
+  card-header-with-select-padding-bottom: 0.5rem,
+
+  select-min-width: 6rem,
+
+  slide-out-background: #252547,
+  slide-out-shadow-color: 2px 0 3px #29157a,
+  slide-out-shadow-color-rtl: -2px 0 3px #29157a,
+), cosmic, cosmic);
+
+$nb-themes: nb-register-theme((
+  layout-padding-top: 2.25rem,
+
+  menu-item-icon-margin: 0 0.5rem 0 0,
+
+  card-height-tiny: 13.5rem,
+  card-height-small: 21.1875rem,
+  card-height-medium: 28.875rem,
+  card-height-large: 36.5625rem,
+  card-height-giant: 44.25rem,
+  card-margin-bottom: 1.875rem,
+  card-header-with-select-padding-top: 0.5rem,
+  card-header-with-select-padding-bottom: 0.5rem,
+
+  select-min-width: 6rem,
+
+  slide-out-background: linear-gradient(270deg, #edf1f7 0%, #e4e9f2 100%),
+  slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
+  slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
+), corporate, corporate);
+
+$nb-themes: nb-register-theme((
+  layout-padding-top: 2.25rem,
+
+  menu-item-icon-margin: 0 0.5rem 0 0,
+
+  card-height-tiny: 13.5rem,
+  card-height-small: 21.1875rem,
+  card-height-medium: 28.875rem,
+  card-height-large: 36.5625rem,
+  card-height-giant: 44.25rem,
+  card-margin-bottom: 1.875rem,
+  card-header-with-select-padding-top: 0.5rem,
+  card-header-with-select-padding-bottom: 0.5rem,
+
+  select-min-width: 6rem,
+
+  slide-out-background: linear-gradient(270deg, #222b45 0%, #151a30 100%),
+  slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
+  slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
+), dark, dark);
+
+
+.buttons-row {
+  margin: -0.5rem;
+}
+
+button[nbButton] {
+  margin: 0.5rem;
+}

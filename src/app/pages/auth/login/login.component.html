@@ -1,0 +1,93 @@
+<mat-card-header>
+  <mat-card-title class="title">Bem vindo a AG-Surveyors</mat-card-title>
+</mat-card-header>
+<mat-card class="example-card">
+  <div class="sub-title">
+    <img
+      src="../../../../assets/img/mini_logo_25X25-green.svg"
+      height="150"
+      width="150"
+    />
+  </div>
+  <mat-card-content>
+    <form [formGroup]="formLogin" class="example-form">
+      <div *ngIf="loaderService.isLoading | async" class="loader-container">
+        <mat-spinner style="margin: 0 auto; top: 50%"></mat-spinner>
+      </div>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label style="font-weight: bold">Email</mat-label>
+
+        <div>
+          <input
+            matInput
+            placeholder="Usuário"
+            name="username"
+            required
+            class="input"
+            pattern=".+@.+\..+"
+            formControlName="username"
+           
+          />
+         
+        </div>
+        <mat-error
+          *ngIf="formLogin.get('username') && formLogin.get('username')"
+        >
+          <p
+            class="caption status-danger"
+            *ngIf="formLogin.get('username')?.errors?.required"
+          >
+            Login obrigatório
+          </p>
+          <p
+            class="caption status-danger"
+            *ngIf="formLogin.get('username')?.errors?.pattern"
+          >
+            Email deve ser verdadeiro
+          </p>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label style="font-weight: bold">Senha</mat-label>
+        
+          <input
+            matInput
+            type="password"
+            name="password"
+            required
+            class="input"
+            placeholder="Senha"
+            formControlName="password"
+          />
+          
+     
+        <mat-error
+          *ngIf="
+            formLogin.get('password')?.invalid &&
+            formLogin.get('password')?.touched
+          "
+        >
+          <mat-error
+            class="caption status-danger"
+            *ngIf="formLogin.get('password')?.errors?.required"
+          >
+            Senha é obrigatória
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        type="submit"
+        mat-raised-button
+        class="button"
+        color="primary"
+        [disabled]="submitted || !formLogin.valid"
+        (click)="onSubmitButton()"
+      >
+        Login
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

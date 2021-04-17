@@ -1,0 +1,70 @@
+mat-card {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+
+  box-shadow: 0 0.01rem 0.1rem 0 rgba(44, 75, 71, 10);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  display: inline-block;
+  top: 4rem;
+  
+  width: 10rem;
+
+  align-items: center;
+  align-content: center;
+  text-align: center;
+
+  left: -1rem;
+
+  margin: 0 auto;
+   background-color: #36f;
+   border-color: #36f;
+   color: #fff;
+   padding: .6875rem 1.125rem;
+   text-transform: uppercase;
+   border-radius: .25rem;
+   font-size: .875rem;
+   line-height: 1rem;
+   cursor: pointer;
+   font-weight: 700;
+   font-family: Open Sans,sans-serif;
+   margin-right: 5px!important;
+}
+
+.btn:hover {
+  text-shadow: 0 0 4px rgb(51, 102, 255), 0 0 4px rgb(51, 102, 255) 0;
+  opacity: 0.8;
+  transition-duration: 0.15s;
+}
+
+.loader-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+
+  left: 0;
+  right: 0;
+}
+
+
+
+@media (max-width: 798px) {
+  .btn {
+    display: inline-block;
+    
+    
+    top: 0.5rem;
+    left: 0.1rem;
+
+    width: 30%;
+}
+}

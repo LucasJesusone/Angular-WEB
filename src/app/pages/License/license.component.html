@@ -1,0 +1,40 @@
+<mat-card>
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Empresa</mat-label>
+      <mat-select style="font-weight: bold">
+        <mat-option
+          *ngFor="let status of enumStatus | keyvalue"
+          [value]="status.key"
+          >{{ status.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Identity</mat-label>
+      <input
+        matInput
+        placeholder="navio"
+        name="navio"
+        required
+        type="text"
+        autocomplete="off"
+      />
+    </mat-form-field>
+
+    <button>Filtrar</button>
+  </form>
+  <mat-list role="list" style="background-color: '#eee' ">
+    <mat-list-item role="listitem">Dispositivo 1</mat-list-item>
+    <mat-list-item role="listitem">Dispositivo 2</mat-list-item>
+    <mat-list-item role="listitem">Dispositivo 3</mat-list-item>
+  </mat-list>
+
+    <button class="btn" (click)="openDialog()">Detalhes do Dispositivo</button>
+
+</mat-card>
+
+
+<!--
+
+-->

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "~@nebular/theme/styles/prebuilt/default.css";
+
+.v-middle {
+  vertical-align: middle;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  color: #111;
+  width: 100%;
+  scrollbar-arrow-color: #000000;
+  scrollbar-3dlight-color: #000000;
+  scrollbar-highlight-color: #ff0000;
+  scrollbar-face-color: #ffffff;
+  scrollbar-shadow-color: #0000ff;
+  scrollbar-darkshadow-color: #ffff00;
+  scrollbar-track-color: #00ff00;
+}
+
+.msg-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.msg-error {
+  background-color: #e35e6b;
+}
+
+

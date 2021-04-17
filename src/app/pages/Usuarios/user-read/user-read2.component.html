@@ -1,0 +1,86 @@
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>>
+</div>
+
+
+
+<div class="container search">
+  <span class="title">
+    <i class="material-icons" style="margin-left: 1rem; font-size: 1.5rem; padding-right: 0.4rem">filter_alt</i>
+    Usuários Cadastrados
+  </span>
+  <mat-form-field appearance="outline" class="input">
+  <input matInput placeholder="Nome" #input (keyup)="applyFilter($event.target.value)" autocomplete="off" >
+</mat-form-field>
+</div>
+
+
+<div class="container">
+  <div class="title">
+    <i
+      class="material-icons"
+      style="margin-left: 1rem; font-size: 1.5rem; padding-right: 0.4rem"
+      >dvr</i>
+    Resultado da Pesquisa
+  </div>
+  
+  <table
+    mat-table
+    class="full-table"
+    matSort
+    aria-label="Elements"
+    [dataSource]="dataSource"
+  >
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+      <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+      <td mat-cell *matCellDef="let row">{{ row.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let row">{{ enumStatus[row.status] }}</td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action" >
+      <th mat-header-cell *matHeaderCellDef  >Ações</th>
+      <td mat-cell *matCellDef="let row" >
+        <a routerLink="/users/update/{{ row.userId }}" >
+     
+          <button matTooltip="Editar" matTooltipPosition="above" class="btn" >
+            <i class="material-icons icon" >edit</i>
+          </button>
+
+        </a>
+        <a>
+     
+          <button matTooltip="Alterar Senha" matTooltipPosition="above" class="btn" (click)="openChangePassword(row.userId)">
+            <i class="material-icons icon" >repeat</i>
+          </button>
+
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    #paginator
+    [length]="totalElements"
+    [pageIndex]="activePage"
+    [pageSize]="10"
+    [pageSizeOptions]="[10]"
+    showFirstLastButtons
+    (page)=onChangeGrid($event)
+  >
+  </mat-paginator>
+</div>

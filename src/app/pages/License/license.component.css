@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+}
+
+.btn {
+
+  background-color: #36F;
+  border-color: #36F;
+  color: #FFF;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}

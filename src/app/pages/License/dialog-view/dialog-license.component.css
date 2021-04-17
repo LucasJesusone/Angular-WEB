@@ -1,0 +1,13 @@
+mat-card {
+    background-color: #eee;
+}
+
+.btn {
+
+    background-color: #36F;
+    border-color: #36F;
+    color: #FFF;
+    border-radius: 0.25rem;
+    margin-left: 0.5rem;
+
+  }
