@@ -29,14 +29,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     );
   }
 }
-
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.css'],
 })
 export class ChangePasswordComponent implements OnInit {
-  @Input() userId: any
+  @Input() userId: any;
   submitted = false;
   form: FormGroup;
   //private currentUserSubject: BehaviorSubject<UserDetails>;
@@ -94,7 +93,6 @@ export class ChangePasswordComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.form.invalid) return;
-
 
     this.changePass();
   }
