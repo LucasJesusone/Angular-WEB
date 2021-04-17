@@ -1,5 +1,4 @@
 import { Status } from '../../../shared/enum/enum';
-
 export class UserModel {
   userId: string;
   name: string;

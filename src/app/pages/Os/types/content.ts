@@ -22,7 +22,6 @@ export interface Client {
   fantasia: string;
   tipoEntidade: string;
 }
-
 export interface Produtor {
   codentidade: number;
   razao: string;
