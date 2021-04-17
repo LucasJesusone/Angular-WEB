@@ -28,8 +28,8 @@ export class UserUpdateComponent implements OnInit {
 
   ngOnInit() {
     // função para pegar os dados da api pelo ID e retornar no formulário de edição com o patchValue
-      const id = this.route.snapshot.paramMap.get('id');
-      this.userService.readById(id!).subscribe((userUpdate) => {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.userService.readById(id!).subscribe((userUpdate) => {
       this.userUpdate = userUpdate;
       this.updateUserInfo.patchValue(this.userUpdate); // Pegar os valores da Model userUpdate usa o patchValue
     });
@@ -39,7 +39,7 @@ export class UserUpdateComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(3)]],
 
       email: ['', [Validators.required, Validators.email]],
-
+ 
       status: [''],
     });
   }
