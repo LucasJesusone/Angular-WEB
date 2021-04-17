@@ -1,5 +1,5 @@
-import { Client, Produtor } from "../../../pages/Os/types/content"
-import { osStatus } from "../../../shared/enum/enum";
+import { Client, Produtor } from '../../../pages/Os/types/content';
+import { osStatus } from '../../../shared/enum/enum';
 export class OsModel {
   codCliente: Client;
   codProdutor: Produtor;
@@ -13,3 +13,4 @@ export class OsModel {
   safra: Date;
 }
 // Model das ordens de serviço
+ 
