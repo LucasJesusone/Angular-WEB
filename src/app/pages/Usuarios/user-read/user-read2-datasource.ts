@@ -1,22 +1,19 @@
 import { MatTableDataSource } from '@angular/material/table';
 import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
-
 // TODO: Replace this with your own data model type
-export interface UserRead2Item{
+export interface UserRead2Item {
   name: string;
   email: string;
   status: string;
-  
 }
 
 // TODO: replace this with real data from your application
-const data: UserRead2Item[] = [{ name: '', email: '', status: ''}];
-
+const data: UserRead2Item[] = [{ name: '', email: '', status: '' }];
 
 /**
  * Data source for the UserRead2 view. This class should
@@ -24,21 +21,14 @@ const data: UserRead2Item[] = [{ name: '', email: '', status: ''}];
  * (including sorting, pagination, and filtering).
  */
 export class UserRead2DataSource extends DataSource<UserRead2Item> {
-  
-  
-    
   data: UserRead2Item[] = data;
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
   filter: string;
   dataSource: MatTableDataSource<any>;
-  
- 
-  
- 
+
   constructor() {
     super();
-    
   }
 
   /**
@@ -54,7 +44,6 @@ export class UserRead2DataSource extends DataSource<UserRead2Item> {
         observableOf(this.data),
         this.paginator.page,
         this.sort.sortChange
-        
       ).pipe(
         map(() => {
           return this.getPagedData(this.getSortedData([...this.data]));
@@ -62,13 +51,11 @@ export class UserRead2DataSource extends DataSource<UserRead2Item> {
       );
     } else {
       throw Error(
-        
         'Please set the paginator and sort on the data source before connecting.'
       );
     }
   }
 
-  
   disconnect(): void {}
 
   private getPagedData(data: UserRead2Item[]): UserRead2Item[] {
@@ -96,7 +83,7 @@ export class UserRead2DataSource extends DataSource<UserRead2Item> {
           return compare(a.name, b.name, isAsc);
         case 'email':
           return compare(a.name, b.name, isAsc);
-          case 'status':
+        case 'status':
           return compare(+a.status, +b.status, isAsc);
         default:
           return 0;

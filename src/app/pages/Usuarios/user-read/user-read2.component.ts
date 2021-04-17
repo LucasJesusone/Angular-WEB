@@ -50,7 +50,7 @@ export class UserRead2Component {
 
   getUser() {
     this.UsersService.getAllPaginate(this.activePage).subscribe((data) => {
-      console.log(data)
+      console.log(data);
       this.dataSource.data = data.content;
       this.totalElements = data.totalElements;
     });
@@ -65,11 +65,8 @@ export class UserRead2Component {
     const dialogRef = this.dialog.open(ChangePasswordComponent, {
       data: {
         userId: userId,
-        
       },
-      
     });
-      console.log(dialogRef)
+    console.log(dialogRef);
   }
-  
 }
