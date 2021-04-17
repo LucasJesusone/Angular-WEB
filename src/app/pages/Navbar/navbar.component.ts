@@ -19,3 +19,4 @@ export class NavbarComponent {
     this.loginService.userLogout();
   }
 }
+ 
