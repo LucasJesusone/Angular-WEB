@@ -21,5 +21,5 @@ describe('DialogLicenseComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); 
 });
