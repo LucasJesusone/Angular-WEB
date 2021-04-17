@@ -17,7 +17,6 @@ const httpOptions = {
       'Acess-Control-Allow-Origin': '*'
     })
 };
-
 @Injectable({providedIn: 'root'})
 export class LoginService {
     private currentUserSubject: BehaviorSubject<UserDetails>;

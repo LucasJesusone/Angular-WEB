@@ -21,7 +21,7 @@ const httpOptions = {
 export class OsService {
   private baseUrlService: string;
   private Endpoint: string = 'os';
-
+ 
   constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) {
     this.baseUrlService = environment.apiService + this.Endpoint; // Método que chama a url da API no enviroment da aplicação, acrescentada do endpoint definido no private acima.
   }
