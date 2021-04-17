@@ -35,7 +35,7 @@ export class OsViewComponent implements OnInit {
         this.osView.codCliente.tipoEntidade
       ); // Inserção manual dos itens contidos na interface.
     });
-
+ 
     // Método de formulário reativo.
     this.ieInfos = this.formBuilder.group({
       os: [{ value: '', disabled: true }],

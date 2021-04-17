@@ -33,7 +33,7 @@ export class OsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort; // static diz que o elemento já está no template
   dataSource: MatTableDataSource<any>;
   form: any;
-
+ 
   constructor(private osService: OsService, private formBuilder: FormBuilder) {
     this.dataSource = new MatTableDataSource();
   }
