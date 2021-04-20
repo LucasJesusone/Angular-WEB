@@ -6,8 +6,6 @@ export interface Content {
   codentidade: number;
   razao: string;
   fantasia: string;
-  tipoEntidade: string;
-  codProdutor: string;
   status: string;
   navio: string;
   safra: Date;
@@ -22,6 +20,7 @@ export interface Client {
   fantasia: string;
   tipoEntidade: string;
 }
+
 export interface Produtor {
   codentidade: number;
   razao: string;
