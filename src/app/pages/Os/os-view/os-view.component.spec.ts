@@ -23,4 +23,3 @@ describe('OsViewComponent', () => {
     expect(component).toBeTruthy();
   });
 });
- 

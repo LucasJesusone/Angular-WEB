@@ -21,11 +21,17 @@ export class OsComponent implements OnInit {
   osList: MatTableDataSource<OsModel[]>;
 
   enumStatus: any = osStatus;
-  displayedFilterColumns: string[] = [
-    'filter-os',
-    'filter-status',
-    'filter-ie',
-  ];
+
+
+
+  // displayedFilterColumns: string[] = [
+  //   'filter-os',
+  //   'filter-status',
+  //   'filter-ie',
+  // ];
+
+
+
   // Método que mostra as colunas na tabela conforme adicionado dentro de [].
   displayedColumns = ['ie', 'os', 'status', 'actions'];
   // ViewChild, função de paginação e sorting.
@@ -33,7 +39,7 @@ export class OsComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort; // static diz que o elemento já está no template
   dataSource: MatTableDataSource<any>;
   form: any;
- 
+
   constructor(private osService: OsService, private formBuilder: FormBuilder) {
     this.dataSource = new MatTableDataSource();
   }
@@ -43,7 +49,7 @@ export class OsComponent implements OnInit {
     this.getOs();
     this.dataSource.sort = this.sort;
 
-    this.formFilter = this.formBuilder.group({
+      this.formFilter = this.formBuilder.group({
       filteros: [null],
       filterstatus: [''],
       filterie: [null],
@@ -56,7 +62,7 @@ export class OsComponent implements OnInit {
 
   // Função que busca os dados da página no serviço criado; this.paginaAtiva vem do evento que faz a mudança da página.
   getOs() {
-    this.osService.getAllPaginate(this.paginaAtiva).subscribe((data) => {
+    this.osService.getAllPaginate(this.paginaAtiva).subscribe(data => {
       this.dataSource.data = data.content; // Adicionado content tipo T dentro do model para nao permanecer com any no data. ex: ((data: any) =>)
       this.totalElements = data.totalElements; // totalElements, total de itens que a API retorna.
     });

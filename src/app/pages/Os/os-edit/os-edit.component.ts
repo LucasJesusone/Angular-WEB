@@ -34,7 +34,7 @@ export class OsEditComponent implements OnInit {
     });
 
     this.updateOsInfo = this.formBuilder.group({
-      os: [''], 
+      os: [''],
       status: { value: '', disabled: true },
       navio: [''],
       fardos: [''],

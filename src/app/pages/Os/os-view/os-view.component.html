@@ -1,124 +1,139 @@
-<mat-card>
-  <mat-card-title>{{ title }}</mat-card-title>
 
-  <form [formGroup]="ieInfos">
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Instrução de Embarque</mat-label>
-      <input
-        matInput
-        type="text"
-        id="ie"
-        formControlName="ie"
-        autocomplete="off"
-        style="font-weight: bold"
-      />
-    </mat-form-field>
+  <mat-card >
+    <mat-card-title>{{title}}</mat-card-title>
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Ordem de Serviço</mat-label>
-      <input
-        matInput
-        type="text"
-        id="os"
-        formControlName="os"
-        autocomplete="off"
-        style="font-weight: bold"
-      />
-    </mat-form-field>
+    <form [formGroup]="ieInfos">
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Razão Social</mat-label>
-      <input
-        matInput
-        placeholder="Razão Social"
-        name="razao"
-        formControlName="razao"
-        type="text"
-        autocomplete="off"
-        style="font-weight: bold"
-      />
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Instrução de Embarque</mat-label>
+        <input
+          matInput
+          type="text"
+          id="ie"
+          formControlName="ie"
+          autocomplete="off"
+          style="font-weight: bold"
+        />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Status</mat-label>
-      <mat-select formControlName="status" style="font-weight: bold">
-        <mat-option
-          *ngFor="let status of enumStatus | keyvalue"
-          [value]="status.key"
-          >{{ status.value }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Ordem de Serviço</mat-label>
+        <input
+          matInput
+          type="text"
+          id="os"
+          formControlName="os"
+          autocomplete="off"
+          style="font-weight: bold"
+        />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Navio</mat-label>
-      <input
-        matInput
-        placeholder="Navio"
-        formControlName="navio"
-        name="navio"
-        type="text"
-        autocomplete="off"
-        style="font-weight: bold"
-      />
-    </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Quantidade de Fardos</mat-label>
-      <input
-        style="font-weight: bold"
-        matInput
-        placeholder="Fardos"
-        formControlName="fardos"
-        name="fardos"
-        style="font-weight: bold"
-        type="text"
-        autocomplete="off"
-      />
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Razão Social</mat-label>
+        <input
+          matInput
+          placeholder="Razão Social"
+          name="razao"
+          formControlName="razao"
+          type="text"
+          autocomplete="off"
+          style="font-weight: bold"
+        />
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Data</mat-label>
-      <input
-        style="font-weight: bold"
-        matInput
-        placeholder="data"
-        formControlName="dataos"
-        name="dataos"
-        style="font-weight: bold"
-        type="dataos"
-        autocomplete="off"
-      />
-    </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Safra</mat-label>
-      <input
-        style="font-weight: bold"
-        matInput
-        placeholder="Safra"
-        formControlName="safra"
-        name="safra"
-        style="font-weight: bold"
-        type="date"
-        autocomplete="off"
-      />
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Status</mat-label>
+        <mat-select formControlName="status" style="font-weight: bold"> 
+          <mat-option
+            *ngFor="let status of enumStatus | keyvalue"
+            [value]="status.key"
+            
+            >{{ status.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label style="font-weight: bold">Tipo de Entidade</mat-label>
-      <input
-        style="font-weight: bold"
-        matInput
-        placeholder="tipoEntidade"
-        formControlName="tipoEntidade"
-        name="tipoEntidade"
-        style="font-weight: bold"
-        type="text"
-        autocomplete="off"
-      />
-    </mat-form-field>
 
-    <button (click)="return()" class="btn">Voltar</button>
-  </form>
-</mat-card>
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Navio</mat-label>
+        <input
+          matInput
+          placeholder="Navio"
+          formControlName="navio"
+          name="navio"
+          type="text"
+          autocomplete="off"
+          style="font-weight: bold"
+        />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Quantidade de Fardos</mat-label>
+        <input
+          style="font-weight: bold"
+          matInput
+          placeholder="Fardos"
+          formControlName="fardos"
+          name="fardos"
+          style="font-weight: bold"
+          type="text"
+          autocomplete="off"
+      
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Data</mat-label>
+        <input
+          style="font-weight: bold"
+          matInput
+          placeholder="data"
+          formControlName="dataos"
+          name="dataos"
+          style="font-weight: bold"
+          type="dataos"
+          autocomplete="off"
+        
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Safra</mat-label>
+        <input
+          style="font-weight: bold"
+          matInput
+          placeholder="Safra"
+          formControlName="safra"
+          name="safra"
+          style="font-weight: bold"
+          type="date"
+          autocomplete="off"
+          
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Tipo de Entidade</mat-label>
+        <input
+          style="font-weight: bold"
+          matInput
+          placeholder="tipoEntidade"
+          formControlName="tipoEntidade"
+          name="tipoEntidade"
+          style="font-weight: bold"
+          type="text"
+          autocomplete="off"
+          
+        />
+      </mat-form-field>
+    
+      <button (click)="return()" class="btn">
+        Voltar
+      </button>
+    </form>
+  </mat-card>
+
+
+  
