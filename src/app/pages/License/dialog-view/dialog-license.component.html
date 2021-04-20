@@ -18,7 +18,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label style="font-weight: bold">Tipo Sistema</mat-label>
-      <mat-select>
+      <mat-select >
         <mat-option
           *ngFor="let type of enumSystemType | keyvalue"
           [value]="type.key"
@@ -27,8 +27,6 @@
       </mat-select>
     </mat-form-field>
 
-
-    
     <mat-form-field appearance="outline">
       <mat-label style="font-weight: bold">Status</mat-label>
       <mat-select>
@@ -50,8 +48,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-
-    <button class="btn">Vincular nova licença</button>
+    
     <button class="btn" (click)="dismiss()">Voltar</button>
   </form>
 </mat-card>

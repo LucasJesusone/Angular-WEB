@@ -1,45 +1,69 @@
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
+
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { FormGroup } from '@angular/forms';
+import { DeviceService } from './service/device.service';
 import { DialogLicenseComponent } from './dialog-view/dialog-license.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { OsModel } from './../Os/model/os.model';
-import { osStatus } from './../../shared/enum/enum';
-import { Component, OnInit } from '@angular/core';
+
+import { Status } from './../../shared/enum/enum';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
-
+import { Device } from './model/device.model';
 @Component({
   selector: 'app-license',
   templateUrl: './license.component.html',
   styleUrls: ['./license.component.css'],
 })
 export class LicenseComponent implements OnInit {
-  enumStatus: any = osStatus;
-  displayedColumns: string[] = ['id'];
-  dataSource = ELEMENT_DATA;
+  totalElements: number = 0;
+  activePage = 0;
+  form: FormGroup;
+  device: MatTableDataSource<Device>;
+  enumStatus: any = Status;
 
-  constructor(public dialog: MatDialog) {}
+  displayedColumns = ['identity', 'company', 'status', 'actions'];
 
-  openDialog() {
-    this.dialog.open(DialogLicenseComponent);
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort; // static diz que o elemento já está no template
+  dataSource: MatTableDataSource<any>;
+
+  constructor(public dialog: MatDialog, private deviceService: DeviceService) {
+    this.dataSource = new MatTableDataSource();
   }
 
-  ngOnInit(): void {}
+  getDevice() {
+    this.deviceService.getDevices(this.activePage).subscribe((data) => {
+      this.dataSource.data = data.content;
+      this.totalElements = data.totalElements;
+    });
+  }
+
+  onChangePage(event: PageEvent): void {
+    this.activePage = event.pageIndex;
+    this.getDevice();
+  }
+
+  openDialogView(deviceId: string) {
+    const dialogRef = this.dialog.open(DialogLicenseComponent, {
+      data: {
+        deviceId: deviceId,
+      },
+    });
+    console.log(dialogRef);
+  }
+
+  openDialogEdit() {
+    this.dialog.open(DialogEditComponent);
+  }
+
+  openDialogDelete() {
+    this.dialog.open(DialogDeleteComponent);
+  }
+
+  ngOnInit(): void {
+    this.dataSource.sort = this.sort;
+  }
 }

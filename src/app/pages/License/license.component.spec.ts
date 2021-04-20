@@ -23,4 +23,3 @@ describe('LicenseComponent', () => {
     expect(component).toBeTruthy();
   });
 });
- 

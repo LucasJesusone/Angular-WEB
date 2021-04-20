@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogLicenseComponent } from './dialog-license.component';
+import { DialogEditComponent } from './dialog-edit.component';
 
-describe('DialogLicenseComponent', () => {
-  let component: DialogLicenseComponent;
-  let fixture: ComponentFixture<DialogLicenseComponent>;
+describe('DialogEditComponent', () => {
+  let component: DialogEditComponent;
+  let fixture: ComponentFixture<DialogEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogLicenseComponent ]
+      declarations: [ DialogEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogLicenseComponent);
+    fixture = TestBed.createComponent(DialogEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

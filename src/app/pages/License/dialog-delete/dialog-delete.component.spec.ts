@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogLicenseComponent } from './dialog-license.component';
+import { DialogDeleteComponent } from './dialog-delete.component';
 
-describe('DialogLicenseComponent', () => {
-  let component: DialogLicenseComponent;
-  let fixture: ComponentFixture<DialogLicenseComponent>;
+describe('DialogDeleteComponent', () => {
+  let component: DialogDeleteComponent;
+  let fixture: ComponentFixture<DialogDeleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogLicenseComponent ]
+      declarations: [ DialogDeleteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogLicenseComponent);
+    fixture = TestBed.createComponent(DialogDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
