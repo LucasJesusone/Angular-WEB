@@ -1,3 +1,4 @@
+
 import { UserModel } from './../model/user.model';
 
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
@@ -39,7 +40,7 @@ export class UsersService {
       `${this.baseUrlService}`,
       httpOptions
     );
-  }
+  } 
 
   getAllPaginate(pageNumber: number): Observable<PageInfo<UserModel[]>> {
     const params = new HttpParams({
@@ -53,14 +54,15 @@ export class UsersService {
     );
   }
 
+
   changePassword(user: UserModel): Observable<UserModel> {
     const url = `${this.baseUrlService}/${user.userId}`;
-    console.log(user);
-    return this.httpClient.put<UserModel>(url, user);
+    console.log(user)
+    return this.httpClient.put<UserModel>(url, user)
   }
 
   update(user: UserModel): Observable<UserModel> {
-    console.log(user);
+    console.log(user)
     const url = `${this.baseUrlService}/${user.userId}`;
     return this.httpClient.put<UserModel>(url, user, httpOptions);
   }
@@ -71,6 +73,8 @@ export class UsersService {
       httpOptions
     );
   }
+
+  
 
   delete(userId: string): Observable<UserModel> {
     const url = `${this.baseUrlService}/${userId}`;
