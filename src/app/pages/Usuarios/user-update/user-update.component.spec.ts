@@ -22,4 +22,3 @@ describe('UserUpdateComponent', () => {
     expect(component).toBeTruthy();
   });
 });
- 

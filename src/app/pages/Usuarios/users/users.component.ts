@@ -12,7 +12,7 @@ export class UsersComponent implements OnInit {
   users: Array<any>;
 
   constructor(private usersService: UsersService, private router: Router) {}
- 
+
   ngOnInit(): void {}
 
   navigateToUserCreate(): void {

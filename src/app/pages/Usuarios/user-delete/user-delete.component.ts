@@ -33,6 +33,7 @@ export class UserDeleteComponent implements OnInit {
       this.router.navigate(['/users']);
     });
   }
+
   cancel(): void {
     this.router.navigate(['/users']);
   }

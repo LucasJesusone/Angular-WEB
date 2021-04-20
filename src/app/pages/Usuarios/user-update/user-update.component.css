@@ -14,7 +14,7 @@ form {
 .btn {
   display: inline-block;
   top: 4rem;
-
+  
   width: 10rem;
 
   align-items: center;
@@ -24,18 +24,18 @@ form {
   left: -1rem;
 
   margin: 0 auto;
-  background-color: #36f;
-  border-color: #36f;
-  color: #fff;
-  padding: 0.6875rem 1.125rem;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1rem;
-  cursor: pointer;
-  font-weight: 700;
-  font-family: Open Sans, sans-serif;
-  margin-right: 5px !important;
+   background-color: #36f;
+   border-color: #36f;
+   color: #fff;
+   padding: .6875rem 1.125rem;
+   text-transform: uppercase;
+   border-radius: .25rem;
+   font-size: .875rem;
+   line-height: 1rem;
+   cursor: pointer;
+   font-weight: 700;
+   font-family: Open Sans,sans-serif;
+   margin-right: 5px!important;
 }
 
 .btn:hover {
@@ -55,13 +55,16 @@ form {
   right: 0;
 }
 
+
+
 @media (max-width: 798px) {
   .btn {
     display: inline-block;
-
+    
+    
     top: 0.5rem;
     left: 0.1rem;
 
     width: 30%;
-  }
+}
 }
