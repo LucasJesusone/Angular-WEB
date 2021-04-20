@@ -19,13 +19,15 @@ export enum deviceLicense {
     APP_FIELD = 'APP_FIELD',
     APP_GATEWAY = 'APP_GATEWAY',
     APP_CHECKLIST = 'APP_CHECKLIST',
-    APP_GINNING_ORDER = 'APP_GINING-ORDER',
+    APP_GINNING_ORDER = 'APP_GINING_ORDER',
     APP_MODULE_FEEDER = 'APP_MODULE_FEEDER'
 }
 
 
 export enum deviceSystemType {
-  ANDROID = 'ANDROID',
-  WINDOWS = 'WINDOWS'
+  ANDROID = 'Android',
+  IOS = 'Ios',
+  WINDOWS = 'Windows',
+  LINUX = 'Linux'
 }
 // Enums de opções para facilitar no código.
