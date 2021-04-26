@@ -1,0 +1,62 @@
+table {
+  width: 100%;
+}
+
+.icon {
+  font-size: 1rem;
+  color: rgb(149, 174, 250);
+  display: flex;
+  justify-content: center;
+  transform: translate(-40%, -20%);
+}
+
+.btn {
+  width: 1.2rem;
+  height: 1.5rem;
+  background-color: #36f;
+  border-color: #36f;
+
+  border-radius: 0.25rem;
+
+  margin-left: 0.5rem;
+}
+
+.container {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 5rem;
+  box-shadow: 0 0.4rem 0.5rem 0 rgb(189, 203, 247);
+}
+
+.btnFilter {
+  border: none;
+  display: flex;
+  background-color: #36f;
+  border-color: #36f;
+  padding: 0.6875rem 1.125rem;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Open Sans, sans-serif;
+  transform: translateY(-10%);
+}
+
+.btnFilter:hover {
+  text-shadow: 0 0 4px rgb(51, 102, 255), 0 0 4px rgb(51, 102, 255) 0;
+  opacity: 0.8;
+  transition-duration: 0.15s;
+}
+
+.search {
+  margin-right: 0.5rem;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  width: 100%
+}
