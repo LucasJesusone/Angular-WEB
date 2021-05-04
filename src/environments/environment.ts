@@ -9,12 +9,6 @@ export const environment = {
 };
 
 
-export const externalApi = {
-  production: false,
-  api: 'http://201.71.160.234:8042',
-  apiService: 'http://201.71.160.234:8042/service/'
-}
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
