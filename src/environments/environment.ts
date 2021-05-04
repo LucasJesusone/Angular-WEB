@@ -4,15 +4,15 @@
 
 export const environment = {
   production: false,
-  api: '',
-  apiService: ''
+  api: 'http://localhost:8080',
+  apiService: 'http://localhost:8080/service/'
 };
-// set api when use
+
 
 export const externalApi = {
   production: false,
-  api: '',
-  apiService: ''
+  api: 'http://201.71.160.234:8042',
+  apiService: 'http://201.71.160.234:8042/service/'
 }
 
 /*

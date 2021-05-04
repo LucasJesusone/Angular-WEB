@@ -1,0 +1,174 @@
+<div class="tudo">
+<mat-card class="container">
+  <mat-card-title>Editar Dispositivo</mat-card-title>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline" class="search">
+      <mat-label style="font-size: 0.8rem; font-weight: 600"
+        >Identidade</mat-label
+      >
+      <input
+        matInput
+        placeholder="Identidade"
+        formControlName="identity"
+        name="identity"
+        autocomplete="off"
+        class="search"
+      />
+      <mat-error>
+        <p>Nome deve conter no mínimo 3 caracteres</p>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Empresa</mat-label>
+      <input
+        matInput
+        placeholder="Empresa"
+        formControlName="company"
+        name="company"
+        autocomplete="off"
+      />
+      <mat-error>
+        <p>Nome deve conter no mínimo 3 caracteres</p>
+      </mat-error>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="outline" class="search">
+      <mat-label style="font-size: 0.8rem; font-weight: 600"
+        >Descrição</mat-label
+      >
+      <input
+        matInput
+        placeholder="Descrição"
+        formControlName="description"
+        name="description"
+        autocomplete="off"
+        class="search"
+      />
+      <mat-error>
+        <p>Nome deve conter no mínimo 3 caracteres</p>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="search">
+      <mat-label style="font-size: 0.8rem; font-weight: 600">Modelo</mat-label>
+      <input
+        matInput
+        placeholder="model"
+        name="model"
+        required
+        type="text"
+        formControlName="model"
+        autocomplete="off"
+        class="search"
+      />
+      <mat-error>
+        <p>Email deve ser válido.</p>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="search">
+      <mat-label style="font-size: 0.8rem; font-weight: 600">Empresa</mat-label>
+      <input
+        matInput
+        placeholder="Empresa"
+        name="model"
+        required
+        type="text"
+        formControlName="company"
+        autocomplete="off"
+        class="search"
+      />
+      <mat-error>
+        <p>Email deve ser válido.</p>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="search">
+      <mat-label style="font-size: 0.8rem; font-weight: 600"
+        >Sistema Operacional</mat-label
+      >
+      <mat-select formControlName="systemType" style="font-weight: bold">
+        <mat-option
+          *ngFor="let systemType of deviceSystemStatus | keyvalue"
+          [value]="systemType.key"
+          >{{ systemType.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label style="font-size: 0.8rem; font-weight: 600">Status</mat-label>
+      <mat-select formControlName="status" style="font-weight: bold">
+        <mat-option
+          *ngFor="let status of deviceStatus | keyvalue"
+          [value]="status.key"
+          >{{ status.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-card>
+<div class="container">
+   <!-- <table class="full-table"  matSort>
+    <thead>
+      <tr matColumnDef="licenseType">
+        <th >Tipo de Licença</th>
+        <th >Data Inicial</th>
+        <th >Data de Expiração</th>
+        <th >Possui chave de licença?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-item [ngForOf]="listLicense" let-i="index">
+        <tr>
+          <td>
+            {{ listLicense[i] }}
+          </td>
+          <td>
+            {{ initialDate[i] }}
+          </td>
+          <td>
+            {{ expirationDate[i] }}
+          </td>
+          <td>
+            {{ key[i] }}
+          </td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table> -->
+  <table mat-table [dataSource]="dataSource" class="full-table" matSort>
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- identity Column -->
+    <ng-container matColumnDef="licenseType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Licença</th>
+      <td mat-cell *matCellDef="let index">{{ [index] }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+  </table>
+  <mat-paginator
+    #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[10]"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+</div>
+<div
+  class="buttons container"
+  style="background-color: transparent; box-shadow: none;"
+>
+  <button (click)="onSubmit()" class="btn">Salvar</button>
+  <button (click)="onSubmit()" class="btn">Incluir Licença</button>
+  <button (click)="cancel()" class="btn">Voltar</button>
+</div>
+
+
+
+</div>

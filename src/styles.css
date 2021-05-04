@@ -15,13 +15,7 @@ body {
   background: #eee;
   color: #111;
   width: 100%;
-  scrollbar-arrow-color: #000000;
-  scrollbar-3dlight-color: #000000;
-  scrollbar-highlight-color: #ff0000;
-  scrollbar-face-color: #ffffff;
-  scrollbar-shadow-color: #0000ff;
-  scrollbar-darkshadow-color: #ffff00;
-  scrollbar-track-color: #00ff00;
+
 }
 
 .msg-success {

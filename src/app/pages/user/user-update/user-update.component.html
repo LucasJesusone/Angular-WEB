@@ -1,0 +1,65 @@
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<mat-card>
+  <mat-card-title>Editar Usuário</mat-card-title>
+  <form [formGroup]="updateUserInfo">
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Nome</mat-label>
+      <input
+        matInput
+        placeholder="Nome"
+        id="name"
+        formControlName="name"
+        name="name"
+        required
+        autocomplete="off"
+      />
+      <mat-error
+        *ngIf="updateUserInfo.get('name') && updateUserInfo.get('name')"
+      >
+        <p *ngIf="updateUserInfo.get('name')?.errors?.minlength">
+          Nome deve conter no mínimo 3 caracteres
+        </p>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Email</mat-label>
+      <input
+        matInput
+        placeholder="Email"
+        formControlName="email"
+        name="email"
+        required
+        type="email"
+        autocomplete="off"
+      />
+      <mat-error
+        *ngIf="updateUserInfo.get('email') && updateUserInfo.get('email')"
+      >
+        <p *ngIf="updateUserInfo.get('email')?.errors?.email">
+          Email deve ser válido.
+        </p>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option
+          *ngFor="let status of enumStatus | keyvalue"
+          [value]="status.key"
+          >{{ status.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="buttons">
+    <button mat-raised-button (click)="onSubmit()" class="btn">
+      Salvar
+    </button>
+
+    <button mat-raised-button (click)="cancel()" class="btn" >
+      Voltar
+    </button>
+  </div>
+  </form>
+</mat-card>

@@ -1,0 +1,67 @@
+<mat-card class="container">
+  <mat-card-title>{{ title }}</mat-card-title>
+  <form [formGroup]="updateOsInfo">
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Ordem de Serviço</mat-label>
+      <input
+        matInput
+        placeholder="Ordem de Serviço"
+        id="os"
+        formControlName="os"
+        name="os"
+        autocomplete="off"
+      />
+      <mat-error>
+        <p>Nome deve conter no mínimo 3 caracteres</p>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">navio</mat-label>
+      <input
+        matInput
+        placeholder="navio"
+        name="navio"
+        required
+        type="text"
+        formControlName="navio"
+        autocomplete="off"
+      />
+      <mat-error>
+        <p>Email deve ser válido.</p>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">fardos</mat-label>
+      <input
+        matInput
+        placeholder="fardos"
+        name="fardos"
+        required
+        type="text"
+        formControlName="fardos"
+        autocomplete="off"
+      />
+      <mat-error>
+        <p>Email deve ser válido.</p>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label style="font-weight: bold">Status</mat-label>
+      <mat-select formControlName="status" style="font-weight: bold">
+        <mat-option
+          *ngFor="let status of enumStatus | keyvalue"
+          [value]="status.key"
+          >{{ status.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="buttons" >
+      <button (click)="onSubmit()" class="btn" >Salvar</button>
+
+      <button (click)="cancel()" class="btn">Voltar</button>
+    </div>
+  </form>
+</mat-card>

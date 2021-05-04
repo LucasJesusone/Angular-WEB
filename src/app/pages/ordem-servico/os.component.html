@@ -1,0 +1,114 @@
+<div class="container search">
+  <span class="title">
+    <i
+      class="material-icons v-middle"
+      style="margin-left: 1rem; font-size: 1.5rem; padding-right: 0.4rem"
+      >filter_alt</i
+    >
+    {{ title }}
+  </span>
+  <form [formGroup]="formFilter">
+    <mat-form-field appearance="outline" style="margin-left: 1rem">
+      <mat-label>Instrução de Embarque</mat-label>
+      <input
+        matInput
+        placeholder="Instrução de Embarque"
+        autocomplete="off"
+        #input
+        (change)="applyFilter($event.target.value)"
+        formControlName="filterie"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="margin-left: 1rem">
+      <mat-label>Ordem de Serviço</mat-label>
+      <input
+        matInput
+        placeholder="Ordem de Serviço"
+        #input
+        formControlName="filteros"
+        autocomplete="off"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="margin-left: 1rem">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="filterstatus">
+        <mat-option
+          *ngFor="let status of enumStatus | keyvalue"
+          [value]="status.key"
+          #input
+          >{{ status.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button (click)="(applyFilter)">Buscar</button>
+  </form>
+</div>
+
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="full-table" matSort>
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="ie">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Instrução de Embarque
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.ie }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="os">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Ordem de Serviço
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.os }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let element">
+        {{enumStatus[element.status] }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['view', element.os?.toString().replace('/', '_')]">
+          <!--Regra de Negócio da API, altera-se '/' para '_'-->
+          <button
+            class="btn"
+            matTooltip="Visualizar"
+            matTooltipPosition="above"
+          >
+          
+            <i class="material-icons icon"> visibility </i>
+          </button>
+        </a>
+        <a [routerLink]="['edit', element.os?.toString().replace('/', '_')]">
+          <button class="btn" matTooltip="Editar" matTooltipPosition="above">
+            <i class="material-icons icon"> edit </i>
+          </button>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [length]="totalElements"
+    [pageIndex]="paginaAtiva"
+    [pageSize]="10"
+    [pageSizeOptions]="[10]"
+    (page)="onChangeGrid($event)"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+</div>

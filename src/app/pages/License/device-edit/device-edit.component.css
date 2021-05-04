@@ -1,0 +1,79 @@
+table {
+  width: 100%;
+}
+
+mat-card {
+  width: 100%;
+
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  
+}
+
+td {
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  border-width: auto;
+} 
+
+th {
+  height: 48px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: rgba(0,0,0,0.54);
+}
+
+tr {
+  height: 56px;
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  padding: 0;
+}
+
+form {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  height: auto;
+  box-shadow: 0 0.4rem 0.5rem 0 rgb(189, 203, 247);
+}
+
+.search {
+  margin-right: 0.5rem;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.btn {
+  
+  margin-right: 1rem;
+  margin-left: -0.8rem;
+  width: auto;
+  height: auto;
+  background-color: #36f;
+  border-color: #36f;
+  color: #fff;
+  padding: 0.6875rem 1.125rem;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Open Sans, sans-serif;
+}
+
+.btn:hover {
+  text-shadow: 0 0 4px rgb(51, 102, 255), 0 0 4px rgb(51, 102, 255) 0;
+  opacity: 0.8;
+  transition-duration: 0.15s;
+}

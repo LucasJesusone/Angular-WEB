@@ -1,0 +1,55 @@
+<mat-card class="container">
+    <h1>Detalhes do dispositivo</h1>
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Descrição</mat-label>
+        <input matInput placeholder="Descrição" type="text" autocomplete="off" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Modelo</mat-label>
+        <input matInput placeholder="Modelo" type="text" autocomplete="off" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Empresa</mat-label>
+        <input matInput placeholder="Empresa" type="text" autocomplete="off" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Tipo Sistema</mat-label>
+        <mat-select >
+          <mat-option
+            *ngFor="let type of enumSystemType | keyvalue"
+            [value]="type.key"
+            >{{ type.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Status</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let status of enumStatus | keyvalue"
+            [value]="status.key"
+            >{{ status.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label style="font-weight: bold">Licenças Vinculadas</mat-label>
+        <mat-select>
+          <mat-option
+            *ngFor="let license of enumLicenses | keyvalue"
+            [value]="license.key"
+            >{{ license.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <button class="btn" (click)="dismiss()">Voltar</button>
+    </form>
+  </mat-card>
+  

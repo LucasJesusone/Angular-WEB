@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: auto;
+    box-shadow: 0 0.4rem 0.5rem 0 rgb(189, 203, 247);
+}
+
+form {
+    width: 100%;
+}

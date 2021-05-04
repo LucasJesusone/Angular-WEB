@@ -1,0 +1,36 @@
+<mat-card>
+  <div *ngIf="loaderService.isLoading | async" class="loader-container">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <mat-card-title>Deletar Usuário</mat-card-title>
+  <form>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Nome"
+        id="name"
+        [value]="userDelete.name"
+        name="name"
+        disabled
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Email"
+        [value]="userDelete.email"
+        name="email"
+        disabled
+        type="email"
+      />
+    </mat-form-field>
+  </form>
+</mat-card>
+
+<button mat-raised-button (click)="delete()" color="warn" class="button">
+  Deletar
+</button>
+
+<button mat-raised-button (click)="cancel()" class="button_cancel">
+  Cancelar
+</button>

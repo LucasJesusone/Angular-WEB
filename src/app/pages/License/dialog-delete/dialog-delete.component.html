@@ -1,1 +1,11 @@
-<p>dialog-delete works!</p>
+<mat-card>
+  <mat-card-title
+    >Deseja realmente excluir o dispositivo cadastrado?</mat-card-title
+  >
+
+  <div class="buttons">
+    <button mat-raised-button class="btn">Excluir</button>
+
+    <button mat-raised-button (click)="dismiss()" class="btn">Voltar</button>
+  </div>
+</mat-card>
